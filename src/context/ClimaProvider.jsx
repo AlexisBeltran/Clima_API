@@ -34,11 +34,11 @@ const ClimaProvider = ({children}) => {
             setNoResultado(false)
             try{
                 const {ciudad, pais} = data;
-                const data_info = await axios.get(`http://api.openweathermap.org/geo/1.0/direct?q=${ciudad},${pais}&limit=1&appid=${import.meta.env.VITE_APP_KEY}`);
+                const data_info = await axios.get(`http://api.openweathermap.org/geo/1.0/direct?q=${ciudad},${pais}&limit=1&appid=a83a1731bae2da8735c3fce2e3b2ebf9`);
                 if(data_info.data.length !== 0){
                     const {lat, lon} = data_info.data[0]
                     //REQUEST DATA INFO
-                    const {data: clima} = await axios.get(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${import.meta.env.VITE_APP_KEY}`);
+                    const {data: clima} = await axios.get(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=a83a1731bae2da8735c3fce2e3b2ebf9`);
                     setResultado(clima);
                 }else{
                     setCargando(false);
