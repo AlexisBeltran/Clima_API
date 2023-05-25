@@ -1,6 +1,8 @@
 import AppClima from "./components/AppClima"
 import ClimaProvider from "./context/ClimaProvider"
 
+
+//FUNTION APP
 function App() {
   return (
     <ClimaProvider>
